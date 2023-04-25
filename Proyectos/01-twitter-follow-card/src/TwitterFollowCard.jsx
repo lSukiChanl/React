@@ -1,16 +1,6 @@
-import './App.css'
-
-const Button = ({ text }) => {
+export function TwitterFollorCard () {
   return (
-    <button>
-      {text}
-    </button>
-  )
-}
-
-function App () {
-  return (
-    <>
+    <main>
       <h1>Twitter Follow Card</h1>
       <article className='tw-followCard'>
         <header className='tw-followCard-header'>
@@ -32,8 +22,6 @@ function App () {
           </button>
         </aside>
       </article>
-    </>
+    </main>
   )
 }
-
-export default App
