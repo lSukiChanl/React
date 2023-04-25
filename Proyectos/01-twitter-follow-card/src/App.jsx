@@ -1,38 +1,26 @@
 import './App.css'
+import { TwitterFollowCard } from './TwitterFollowCard.jsx'
 
-const Button = ({ text }) => {
-  return (
-    <button>
-      {text}
-    </button>
-  )
-}
+export function App () {
+  const formatUserName = (userName) => `@${userName}`
 
-function App () {
   return (
-    <>
+    <section className='App'>
       <h1>Twitter Follow Card</h1>
-      <article className='tw-followCard'>
-        <header className='tw-followCard-header'>
-          <img
-            className='tw-followCard-avatar'
-            src='https://pbs.twimg.com/media/FM4ltg5XIAIrzYy.jpg'
-            alt='Avatar del Usuario'
-          />
-          <div className='tw-followCard-info'>
-            <strong> Trapito Lover</strong>
-            <span className='tw-followCard-infoUserName'> @TrapLover</span>
-          </div>
-        </header>
+      <TwitterFollowCard
+        formatUserName={formatUserName}
+        isFollowing userName='TrapLover'
+      >
+        <strong> TrapLover Nombre </strong>
+      </TwitterFollowCard>
 
-        <aside>
-          <button className='tw-followCard-button'>
-            <span className='tw-followCard-text'> Seguir </span>
-            <span className='tw-followCard-stopFollow'>Dejar de seguir</span>
-          </button>
-        </aside>
-      </article>
-    </>
+      <TwitterFollowCard
+        formatUserName={formatUserName}
+        isFollowing={false} userName='Suki-Chan'
+      >
+        <strong> Suki-Chan Nombre </strong>
+      </TwitterFollowCard>
+    </section>
   )
 }
 
