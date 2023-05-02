@@ -27,7 +27,7 @@ function App () {
 
         <aside>
           <button className='tw-followCard-button'>
-            <span className='tw-followCard-text'> Seguir </span>
+            <span className='tw-followCard-text'> Seguir DDD </span>
             <span className='tw-followCard-stopFollow'>Dejar de seguir xdaa</span>
           </button>
         </aside>
