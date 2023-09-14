@@ -1,26 +1,29 @@
 ## El Proyecto 00 Inicializacion de un Proyecto en React con Vite
 
-Es Sobre como inicializar un proyecto de React con Vite
-Instalando lo minimo de Vite y Configurandolo
-(Usando Vanilla) - (Javascript)
+Este Proyecto es sobre como podemos inicializar un proyecto en React con Vite
+Instalando lo minimo de Vite y configurandolo
+(Vanilla y Javascript)
 
 ### Instalar Plugin de Vite 
+Primero Instalamos el Plugin de React
 `npm install @vitejs/plugin-react -E`
 
 ### Instalar Dependencia de React y ReactDOM
+Instalamos React y ReactDom
 `npm install react react-dom -E`
 
 ### Instalar el Inter
+Instalamos el Inter
 `npm install standard -D`
 
-Agregamos  el Inter en el Package.json
+Configuramos el Inter agregandolo en el proyecto, en el package.json
 
     ,
-    "eslintConfig" : {
-    	"estends" : './node_modules/standard/eslintrc.json'
+    "eslintConfig": {
+        "estends": "./node_modules/standard/eslintrc.json"
     }
 
-### Crear la Configuracion de Vite en vite.config.js
+### Creamos la Configuracion del Plugin de Vite creando un fichero vite.config.js
     import {defineConfig } from 'vite'
     import react from '@vitejs/plugin-react'
 
@@ -28,20 +31,15 @@ Agregamos  el Inter en el Package.json
     plugins: [react()],
     })
 
-### En el main.js
+### Creamos el punto de entrada en el main.jsx
     import { createRoot } from 'react-dom/client';
     import { App } from './src/App.jsx';
 
     const root = createRoot(document.getElementById('app'));
     root.render(< App/>);
 
-### index.js
-Agregar la linea en el index.js
-
-    <script type="module" src="/main.jsx"></script>
-
-
-### App.jsx
+### Creamos el fichero App.jsx
     export function App(){
     	return <h1>Hello World App</h1>
     }
+
