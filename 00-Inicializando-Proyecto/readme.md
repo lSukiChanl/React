@@ -24,19 +24,19 @@ Configuramos el Inter agregandolo en el proyecto, en el package.json
     }
 
 ### Creamos la Configuracion del Plugin de Vite creando un fichero vite.config.js
-    import {defineConfig } from 'vite'
+    import { defineConfig } from 'vite'
     import react from '@vitejs/plugin-react'
 
     export default defineConfig({
-    plugins: [react()],
+        plugins: [react()]
     })
 
 ### Creamos el punto de entrada en el main.jsx
-    import { createRoot } from 'react-dom/client';
-    import { App } from './src/App.jsx';
+    import { createRoot } from 'react-dom/client'
+    import { App } from './src/App.jsx'
 
-    const root = createRoot(document.getElementById('app'));
-    root.render(< App/>);
+    const root = createRoot(document.getElementById('app'))
+    root.render(<App />)
 
 ### Creamos el fichero App.jsx
     export function App(){
