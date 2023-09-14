@@ -1,54 +1,47 @@
-El Proyecto 00
-    Es Sobre como inicializar un proyecto de React con Vite
-    Instalando lo minimo de Vite y Configurandolo
-    (Usando Vanilla) - (Javascript)
+## El Proyecto 00 Inicializacion de un Proyecto en React con Vite
 
-    ** Instalar Plugin de Vite**
-    npm install @vitejs/plugin-react -E
+Es Sobre como inicializar un proyecto de React con Vite
+Instalando lo minimo de Vite y Configurandolo
+(Usando Vanilla) - (Javascript)
 
-    ** Instalar Dependencia de React y ReactDOM **
-    npm install react react-dom -E
+### Instalar Plugin de Vite 
+`npm install @vitejs/plugin-react -E`
 
-    ** Instalar el Inter **
-    npm install standard -D
+### Instalar Dependencia de React y ReactDOM
+`npm install react react-dom -E`
 
-    ** Configurar el Inter en package.json**
-    [
-        ,
-        "eslintConfig" : {
-            "estends" : './node_modules/standard/eslintrc.json'
-        }
-    ]
+### Instalar el Inter
+`npm install standard -D`
 
-    ** Crear la Configuracion de Vite en vite.config.js**
-    [
-        import {defineConfig } from 'vite'
-        import react from '@vitejs/plugin-react'
+Agregamos  el Inter en el Package.json
 
-        export default defineConfig({
-            plugins: [react()],
-        })
-    ]
+    ,
+    "eslintConfig" : {
+    	"estends" : './node_modules/standard/eslintrc.json'
+    }
 
-    ** En el main.js **
-    [
-        import { createRoot } from 'react-dom/client';
-        import { App } from './src/App.jsx';
+### Crear la Configuracion de Vite en vite.config.js
+    import {defineConfig } from 'vite'
+    import react from '@vitejs/plugin-react'
 
-        const root = createRoot(document.getElementById('app'));
-        root.render(< App/>);
-    ]
+    export default defineConfig({
+    plugins: [react()],
+    })
 
-    ** En el index.js **
-    Agregar la Linea 
-    [
-        <script type="module" src="/main.jsx"></script>
-    ]
+### En el main.js
+    import { createRoot } from 'react-dom/client';
+    import { App } from './src/App.jsx';
 
-    ** Crear el archivo App.jsx **
-    [
-        export function App(){
-            return <h1>Hello World App</h1>
-        }
-    ]
+    const root = createRoot(document.getElementById('app'));
+    root.render(< App/>);
 
+### index.js
+Agregar la linea en el index.js
+
+    <script type="module" src="/main.jsx"></script>
+
+
+### App.jsx
+    export function App(){
+    	return <h1>Hello World App</h1>
+    }
