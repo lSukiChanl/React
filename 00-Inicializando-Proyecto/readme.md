@@ -4,6 +4,10 @@ Este Proyecto es sobre como podemos inicializar un proyecto en React con Vite
 Instalando lo minimo de Vite y configurandolo
 (Vanilla y Javascript)
 
+### Creamos el Proyecto de Vite
+Seleccionamos de framework Vanilla - Javascript
+`npm create vite`
+
 ### Instalar Plugin de Vite 
 Primero Instalamos el Plugin de React
 `npm install @vitejs/plugin-react -E`
