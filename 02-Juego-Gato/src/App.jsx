@@ -1,4 +1,5 @@
 import { useState } from "react"
+import confetti from 'canvas-confetti'
 
 const Turnos = {
   player1: '✘',
@@ -53,6 +54,7 @@ function App() {
 
     const newGanador = revisarGanador(NewTablero)
     if (newGanador) {
+      confetti()
       setGanador(newGanador)
     } else if (revisarFinal(NewTablero)) {
       setGanador(false)
@@ -120,6 +122,9 @@ function App() {
             </section>
           )
         }
+        <footer className="reset">
+          <button className="button" onClick={resetGame}>Reiniciar Juego</button>
+        </footer>
       </main>
 
     </>
