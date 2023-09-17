@@ -2,22 +2,9 @@ import { useState } from "react"
 import confetti from 'canvas-confetti'
 
 import { Turns } from "./constants/constans"
-import { CombosWinners } from "./constants/constans"
-
-// eslint-disable-next-line react/prop-types
-const Square = ({ children, isSelected, updateBoard, index }) => {
-  const className = `square ${isSelected ? 'is-selected' : ''}`	
-
-  const handleClick = () => {
-    updateBoard(index)
-  }
-
-  return (
-    <div className={className} onClick={handleClick}>
-      {children}
-    </div>
-  )
-}
+import { Square } from './components/Square.jsx'
+import { ModalWinner } from "./components/ModalWinner"
+import { checkWinner, checkEnd } from "./logic/Board"
 
 function App() {
   const [Board, setBoard] = useState(Array(9).fill(null))
@@ -46,20 +33,6 @@ function App() {
 
   }
 
-  const checkWinner = (NewBoard) => {
-    for(const Combinacion of CombosWinners) { 
-      const [a, b, c] = Combinacion
-      if (NewBoard[a] && NewBoard[a] === NewBoard[b] && NewBoard[a] === NewBoard[c]) {
-        return NewBoard[a]
-      }
-    }
-    return null
-  }
-
-  const checkEnd = (NewBoard) => {
-    return NewBoard.every((Casilla) => Casilla != null)
-  }
-
   const resetGame = () => {
     setBoard(Array(9).fill(null))
     setTurn(Turns.player1)
@@ -85,27 +58,8 @@ function App() {
           <Square isSelected={Turn === Turn.player2} > {Turn.player2} </Square>
         </section>
         
-        {
-          Winner != null && (
-            <section className="winner">
-              <h2 className="text">
-                {
-                  Winner === false ? 'Empate' : `Ganador:`
-                }
-
-                <header className="win">
-                  {
-                    Winner && <Square> {Winner} </Square>
-                  }
-                </header>
-
-                <footer className="reset">
-                  <button className="button" onClick={resetGame}>Reiniciar Juego</button>
-                </footer>
-              </h2>
-            </section>
-          )
-        }
+        <ModalWinner resetGame={resetGame} Winner={Winner}> </ModalWinner>
+        
         <footer className="reset">
           <button className="button" onClick={resetGame}>Reiniciar Juego</button>
         </footer>
