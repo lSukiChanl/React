@@ -1,14 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import confetti from 'canvas-confetti'
 
 import { Turns } from "./constants/constans"
 import { Square } from './components/Square.jsx'
 import { ModalWinner } from "./components/ModalWinner"
 import { checkWinner, checkEnd } from "./logic/Board"
+import { SaveStorage, RemoveStorage } from "./storage/Storage"
 
 function App() {
-  const [Board, setBoard] = useState(Array(9).fill(null))
-  const [Turn, setTurn] = useState(Turns.player1)
+  const [Board, setBoard] = useState(() => {
+    const boardFromStorage = window.localStorage.getItem('board')
+    return boardFromStorage ? JSON.parse(boardFromStorage) : Array(9).fill(null)
+  })
+  const [Turn, setTurn] = useState(() => {
+    const turnFromStorage = window.localStorage.getItem('turn')
+    return turnFromStorage ? JSON.parse(turnFromStorage) : Turns.player1
+  })
+
   const [Winner, setWinner] = useState(null)
 
   const updateBoard = (index) => {
@@ -37,7 +45,13 @@ function App() {
     setBoard(Array(9).fill(null))
     setTurn(Turns.player1)
     setWinner(null)
+
+    RemoveStorage()
   }
+  
+  useEffect(() => {
+    SaveStorage(Board, Turn)
+  }, [Board, Turn])
 
   return (
     <>
@@ -54,8 +68,8 @@ function App() {
         </section>
 
         <section className="turn">
-          <Square isSelected={Turn === Turn.player1} > {Turn.player1} </Square>
-          <Square isSelected={Turn === Turn.player2} > {Turn.player2} </Square>
+          <Square isSelected={Turn === Turns.player1} > {Turns.player1} </Square>
+          <Square isSelected={Turn === Turns.player2} > {Turns.player2} </Square>
         </section>
         
         <ModalWinner resetGame={resetGame} Winner={Winner}> </ModalWinner>
@@ -64,7 +78,6 @@ function App() {
           <button className="button" onClick={resetGame}>Reiniciar Juego</button>
         </footer>
       </main>
-
     </>
   )
 }
