@@ -1,5 +1,5 @@
 import './App.css'
-import { TwitterFollowCard } from "./assets/TwitterFollowCard.jsx";
+import { TwitterFollowCard } from "./Components/TwitterFollowCard.jsx";
  
 
 function App() {
