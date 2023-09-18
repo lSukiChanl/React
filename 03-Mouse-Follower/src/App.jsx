@@ -22,6 +22,15 @@ function App() {
 
   }, [Enabled]);
 
+  useEffect(() => {
+    document.body.classList.toggle('no-cursor', Enabled);
+
+    return () => {
+      document.body.classList.remove('no-cursor');
+    }
+
+  }, [Enabled]);
+
   return (
     <main>
       <div style={{
