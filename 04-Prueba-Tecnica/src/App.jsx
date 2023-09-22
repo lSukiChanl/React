@@ -6,7 +6,6 @@ function App() {
 
   const [Fact, setFact] = useState()
   const [Image, setImage] = useState()
-  const [Generar, setGenerar] = useState(true)
 
   const ApiFact = 'https://catfact.ninja/fact'
   const ApiCat = 'https://cataas.com'
@@ -61,15 +60,9 @@ function App() {
   }, [Fact])*/
 
   /// Usando Async Axios
-  /*useEffect(() => {
-    axios.get(ApiFact).then(response => {
-      const { fact } = response.data
-      console.log(fact);
-      setFact(fact)
-    }).catch(error => {
-      console.log(error);
-    })
-  }, [Generar])
+  useEffect(() => {
+    GenerarFact()
+  }, [])
 
   useEffect(() => {
     if(!Fact) return
@@ -82,7 +75,21 @@ function App() {
     }).catch(error => {
       console.log(error);
     })
-  }, [Fact])*/
+  }, [Fact])
+
+  const GenerarFact = () => {
+    axios.get(ApiFact).then(response => {
+      const { fact } = response.data
+      console.log(fact);
+      setFact(fact)
+    }).catch(error => {
+      console.log(error);
+    })
+  }
+
+  const handleClick = () => {
+    GenerarFact()
+  }
 
   return (
     <main>
@@ -90,7 +97,7 @@ function App() {
       {Fact && <p>{Fact}</p>}
       {Image && <img src={ApiCat + Image} alt="Cat" height='200px'/>}
       <br/>
-      <button onClick={() => {setGenerar(!Generar)}} > Generar Nuevo </button>
+      <button onClick={() => {handleClick()}} > Generar Nuevo </button>
 
     </main>
   )
