@@ -1,94 +1,30 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import axios from 'axios'
+import { ApiCat } from './services/EndPoints'
+
+// eslint-disable-next-line no-unused-vars
+import { GenerarFactFetch, GenerarFactPromise,  GenerarFactAxios } from './services/GenerarFact'
+// eslint-disable-next-line no-unused-vars
+import { GenerarIMGAFetch, GenerarIMGPromise, GenerarIMGAxios } from './services/GenerarIMG'
 
 function App() {
 
   const [Fact, setFact] = useState()
   const [Image, setImage] = useState()
 
-  const ApiFact = 'https://catfact.ninja/fact'
-  const ApiCat = 'https://cataas.com'
-
-  /// Usando Fetch
-  /*useEffect(() => {
-    fetch(ApiFact)
-      .then(response => response.json())
-      .then(data => {
-        const { fact } = data
-        setFact(fact)
-        console.log(fact)
-      })
-  }, [Generar])
 
   useEffect(() => {
-    if(!Fact) return
-
-    const ThreeWord = Fact.split(' ').slice(0, 3).join(' ')
-    console.log(ThreeWord);
-    fetch(`https://cataas.com/cat/says/${ThreeWord}?json=true`)
-      .then(response => response.json())
-      .then(data => {
-        const {url} = data
-        setImage(url)
-    })
-  }, [Fact])*/
-
-  /// Usando Async Await
-  /*useEffect(() => {
-    const getFact = async () => {
-      const response = await fetch(ApiFact)
-      const data = await response.json()
-      const { fact } = data
-      setFact(fact)
-    }
-    getFact()
-  }, [Generar])
-
-  useEffect(() => {
-    if(!Fact) return
-
-    const ThreeWord = Fact.split(' ').slice(0, 3).join(' ')
-    console.log(ThreeWord);
-    const getCat = async () => {
-      const response = await fetch(`https://cataas.com/cat/says/${ThreeWord}?json=true`)
-      const data = await response.json()
-      const {url} = data
-      setImage(url)
-    }
-    getCat()    
-  }, [Fact])*/
-
-  /// Usando Async Axios
-  useEffect(() => {
-    GenerarFact()
+    GenerarFactAxios().then(setFact)
   }, [])
 
   useEffect(() => {
     if(!Fact) return
-
-    const ThreeWord = Fact.split(' ').slice(0, 3).join(' ')
-    console.log(ThreeWord);
-    axios.get(`https://cataas.com/cat/says/${ThreeWord}?json=true`).then(response => {
-      const {url} = response.data
-      setImage(url)
-    }).catch(error => {
-      console.log(error);
-    })
+    GenerarIMGAxios(Fact.split(' ').slice(0,3).join(' ')).then(setImage)
   }, [Fact])
 
-  const GenerarFact = () => {
-    axios.get(ApiFact).then(response => {
-      const { fact } = response.data
-      console.log(fact);
-      setFact(fact)
-    }).catch(error => {
-      console.log(error);
-    })
-  }
 
-  const handleClick = () => {
-    GenerarFact()
+  const handleClick = async ()  => {
+    GenerarFactAxios().then(setFact)
   }
 
   return (
