@@ -1,35 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
-function App() {
-
-  const [Enabled, setEnabled] = useState(false);
-  const [Position, setPosition] = useState({ x: -20, y: -20 });
+function App () {
+  const [Enabled, setEnabled] = useState(false)
+  const [Position, setPosition] = useState({ x: -20, y: -20 })
 
   useEffect(() => {
     console.log('Efecto', { Enabled })
 
     const handleMove = (event) => {
-      const { clientX, clientY } = event;
-      setPosition({ x: clientX, y: clientY });
-    };
+      const { clientX, clientY } = event
+      setPosition({ x: clientX, y: clientY })
+    }
 
     if (Enabled) window.addEventListener('pointermove', handleMove)
 
     return () => {
       window.removeEventListener('pointermove', handleMove)
-      setPosition({ x: -20, y: -20 });
+      setPosition({ x: -20, y: -20 })
     }
-
-  }, [Enabled]);
+  }, [Enabled])
 
   useEffect(() => {
-    document.body.classList.toggle('no-cursor', Enabled);
+    document.body.classList.toggle('no-cursor', Enabled)
 
     return () => {
-      document.body.classList.remove('no-cursor');
+      document.body.classList.remove('no-cursor')
     }
-
-  }, [Enabled]);
+  }, [Enabled])
 
   return (
     <main>
@@ -45,10 +42,11 @@ function App() {
         width: 40,
         height: 40,
         transform: `translate(${Position.x}px, ${Position.y}px)`
-      }} />
-      <button onClick={() => { setEnabled(!Enabled); }}>  {Enabled ? 'Desactivar' : 'Activar'} </button>
+      }}
+      />
+      <button onClick={() => { setEnabled(!Enabled) }}>  {Enabled ? 'Desactivar' : 'Activar'} </button>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
