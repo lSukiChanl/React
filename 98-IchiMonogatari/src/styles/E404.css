@@ -1,0 +1,18 @@
+.IMGBuscando{
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    text-align: center !important;
+}
+
+.TituloOscuro{
+    color: pink;
+    font:  bold 250% cursive;
+    text-align: center;
+}
+
+.TituloClaro{
+    color: black;
+    font:  bold 250% cursive;
+    text-align: center;
+}
