@@ -1,0 +1,14 @@
+.IMG{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.Creditos {
+    color:#A6A8A9;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font: bold 100% cursive;
+    text-align: center;
+}

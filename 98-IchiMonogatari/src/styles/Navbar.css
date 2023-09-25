@@ -1,0 +1,30 @@
+.TituloNav{
+    color: aqua !important;
+    font: bold 150% cursive;
+}
+
+.TituloNav:hover{
+    color: pink !important;
+}
+
+.TituloNav:focus{
+    color: pink ;
+    font: bold 150% cursive;
+}
+
+.EnlacesNav{
+    font: bold 125% cursive;
+    color: pink !important;
+}
+
+.EnlacesNav:hover {
+    color: aqua !important;
+}
+
+.EnlacesNav:focus {
+    color: aqua !important;
+}
+
+.ColorPink{
+    color: pink !important;
+}
