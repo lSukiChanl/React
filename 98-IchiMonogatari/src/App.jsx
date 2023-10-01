@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Navbar from './components/Navbar'
 import Banner from './components/Banner'
@@ -15,38 +15,60 @@ import E404 from './routes/E404'
 
 function App () {
   const [BotonLuces, setBotonLuces] = useState(false)
+  const [DarkMode, setDarkMode] = useState(true)
 
   const Interruptor = () => {
     setBotonLuces(current => !current)
   }
 
+  const handleClick = () => {
+    console.log('DarkMode: ' + !DarkMode)
+    setDarkMode(!DarkMode)
+    if (!DarkMode) {
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+    }
+  }
+
+  useEffect(() => {
+    if (DarkMode) {
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+    }
+  }, [DarkMode])
+
   return (
     <>
-      <Router>
-        <Navbar BotonLuces={BotonLuces} Interruptor={Interruptor} />
+      <div className='text-s'>  </div>
+      <div className='bg-neutral-100 dark:bg-neutral-800'>
+        <Router>
+          <Navbar BotonLuces={BotonLuces} Interruptor={Interruptor} handleClick={handleClick} />
 
-        <Routes>
-          <Route path='/' element={<Banner />} />
-          <Route path='/Inicio' element={<Banner />} />
-          <Route path='/Anime' element={<Banner />} />
-          <Route path='/Pelicula' element={<Banner />} />
-          <Route path='/Hentai' element={<Banner />} />
-          <Route path='*' element={<Banner />} />
-        </Routes>
-
-        <div className={`pb-5 ${BotonLuces ? 'bg-neutral-200' : 'bg-neutral-800'}`}>
           <Routes>
-            <Route path='/' element={<ListaTodo />} />
-            <Route path='/Inicio' element={<ListaTodo />} />
-            <Route path='/Anime' element={<ListaAnimes />} />
-            <Route path='/Pelicula' element={<ListaPeliculas />} />
-            <Route path='/Hentai' element={<ListaHentais />} />
-            <Route path='*' element={<E404 />} />
+            <Route path='/' element={<Banner />} />
+            <Route path='/Inicio' element={<Banner />} />
+            <Route path='/Anime' element={<Banner />} />
+            <Route path='/Pelicula' element={<Banner />} />
+            <Route path='/Hentai' element={<Banner />} />
+            <Route path='*' element={<Banner />} />
           </Routes>
-          <Copyright />
-        </div>
 
-      </Router>
+          <div className={`pb-5 ${BotonLuces ? 'bg-neutral-200' : 'bg-neutral-800'}`}>
+            <Routes>
+              <Route path='/' element={<ListaTodo />} />
+              <Route path='/Inicio' element={<ListaTodo />} />
+              <Route path='/Anime' element={<ListaAnimes />} />
+              <Route path='/Pelicula' element={<ListaPeliculas />} />
+              <Route path='/Hentai' element={<ListaHentais />} />
+              <Route path='*' element={<E404 />} />
+            </Routes>
+            <Copyright />
+          </div>
+
+        </Router>
+      </div>
     </>
   )
 }
