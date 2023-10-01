@@ -2,10 +2,9 @@ import { useState } from 'react'
 
 import Navbar from './components/Navbar'
 import Banner from './components/Banner'
-import Banner18 from './components/Banner18'
 import Copyright from './components/Copyright'
 
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 /// Rutas
 import ListaTodo from './routes/ListaTodo'
