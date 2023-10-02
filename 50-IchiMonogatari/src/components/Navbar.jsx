@@ -30,7 +30,7 @@ export default function Banner ({ BotonLuces, Interruptor, handleClick }) {
             <div className='flex justify-between'>
 
               <div className='flex items-center py-3 px-3'>
-                <Link className='text-sm' to='/Inicio'> ❤ IchiMonogatari ❤ </Link>
+                <Link className=' TituloNav' to='/Inicio'> ❤ IchiMonogatari ❤ </Link>
               </div>
               <div className='hidden lg:flex items-center space-x-1'>
                 <Link className='EnlacesNav px-3' to='/Inicio'>Inicio</Link>
@@ -73,7 +73,9 @@ export default function Banner ({ BotonLuces, Interruptor, handleClick }) {
           </div>
         </div>
       </div>
+
       <br />
+
       <div id='Navbar2'>
         <div className='bg-neutral-200 dark:bg-neutral-800'>
           <div className='container mx-auto px-0'>
