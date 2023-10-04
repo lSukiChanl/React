@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 import Navbar from './components/Navbar'
 import Banner from './components/Banner'
+import Banner18 from './components/Banner18'
 import Copyright from './components/Copyright'
 
 import E404 from './routes/E404'
@@ -45,7 +46,7 @@ function App () {
             <Route path='/' element={<Banner Theme={Theme} />} />
             <Route path='/Inicio' element={<Banner Theme={Theme} />} />
             <Route path='/Anime' element={<Banner Theme={Theme} />} />
-            <Route path='/Hentai' element={<Banner Theme={Theme} />} />
+            <Route path='/Hentai' element={<Banner18 Theme={Theme} />} />
             <Route path='/Pelicula' element={<Banner />} />
             <Route path='*' element={<Outlet />} />
           </Routes>
