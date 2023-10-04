@@ -2,10 +2,48 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-html {
-  font-family: "Comic Sans MS", system-ui, sans-serif;
-}
 
-.DarkNavEnlaces:focus{
-  color: aqua !important
+
+@layer utilities {
+
+  html {
+    font-family: "Comic Sans MS", system-ui, sans-serif;
+  }
+
+  .DarkNavEnlaces:focus{
+    color: aqua !important
+  }
+  
+  .BrilloClaro {
+    box-shadow:
+      0 0 7px black,
+      0 0 5px black,
+      0 0 15px black 
+    !important;
+  }
+
+  .BrilloClaro:hover {
+    box-shadow:
+      0 0 7px cadetblue,
+      0 0 5px cadetblue,
+      0 0 15px cadetblue 
+    !important;
+  }
+  
+  .BrilloOscuro {
+    box-shadow:
+      0 0 7px white,
+      0 0 5px white,
+      0 0 15px white 
+    !important;
+  }
+
+  .BrilloOscuro:hover {
+    box-shadow:
+      0 0 7px pink,
+      0 0 5px pink,
+      0 0 15px pink 
+    !important;
+  }
+
 }
