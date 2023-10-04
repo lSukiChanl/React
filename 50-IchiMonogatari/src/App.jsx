@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import Navbar from './components/Navbar'
@@ -41,15 +41,25 @@ function App () {
       <div className='bg-neutral-100 dark:bg-neutral-800'>
         <Router>
           <Navbar ChangeTheme={ChangeTheme} Theme={Theme} />
-          <Banner Theme={Theme} />
+          <Routes>
+            <Route path='/' element={<Banner Theme={Theme} />} />
+            <Route path='/Inicio' element={<Banner Theme={Theme} />} />
+            <Route path='/Anime' element={<Banner Theme={Theme} />} />
+            <Route path='/Hentai' element={<Banner Theme={Theme} />} />
+            <Route path='/Pelicula' element={<Banner />} />
+            <Route path='*' element={<Outlet />} />
+          </Routes>
+
           <Routes>
             <Route path='/' element={<ListaTodo />} />
             <Route path='/Inicio' element={<ListaTodo />} />
+            <Route path='/Anime' element={<ListaTodo />} />
+            <Route path='/Hentai' element={<ListaTodo />} />
+            <Route path='/Pelicula' element={<ListaTodo />} />
             <Route path='*' element={<E404 />} />
           </Routes>
           <Copyright />
         </Router>
-
       </div>
 
     </>

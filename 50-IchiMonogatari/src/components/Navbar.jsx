@@ -33,10 +33,10 @@ export default function NavbarT ({ ChangeTheme, Theme }) {
             <div className='hidden lg:flex items-center space-x-1'>
               <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Inicio'>Inicio</Link>
               <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Anime'>Animes</Link>
-              <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Comando'>Comandos </Link>
               <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Pelicula'>Peliculas</Link>
               <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Hentai'>Hentai</Link>
               <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Discord&Bot'>Discord&Bots</Link>
+              <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Comando'>Comandos </Link>
               {
                 Theme === 'light'
                   // eslint-disable-next-line operator-linebreak
