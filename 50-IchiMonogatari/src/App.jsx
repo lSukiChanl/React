@@ -6,8 +6,12 @@ import Banner from './components/Banner'
 import Banner18 from './components/Banner18'
 import Copyright from './components/Copyright'
 
+import ListaTodos from './routes/ListaTodo'
+import ListaAnimes from './routes/ListaAnimes'
+import ListaSeries from './routes/ListaSeries'
+import ListaHentai from './routes/ListaHentai'
+import ListaPeliculas from './routes/ListaPeliculas'
 import E404 from './routes/E404'
-import ListaTodo from './routes/ListaTodo'
 
 function App () {
   const [Theme, setTheme] = useState(() => {
@@ -45,18 +49,20 @@ function App () {
           <Routes>
             <Route path='/' element={<Banner Theme={Theme} />} />
             <Route path='/Inicio' element={<Banner Theme={Theme} />} />
-            <Route path='/Anime' element={<Banner Theme={Theme} />} />
+            <Route path='/Animes' element={<Banner Theme={Theme} />} />
+            <Route path='/Series' element={<Banner />} />
             <Route path='/Hentai' element={<Banner18 Theme={Theme} />} />
-            <Route path='/Pelicula' element={<Banner />} />
+            <Route path='/Peliculas' element={<Banner />} />
             <Route path='*' element={<Outlet />} />
           </Routes>
 
           <Routes>
-            <Route path='/' element={<ListaTodo />} />
-            <Route path='/Inicio' element={<ListaTodo />} />
-            <Route path='/Anime' element={<ListaTodo />} />
-            <Route path='/Hentai' element={<ListaTodo />} />
-            <Route path='/Pelicula' element={<ListaTodo />} />
+            <Route path='/' element={<ListaTodos />} />
+            <Route path='/Inicio' element={<ListaTodos />} />
+            <Route path='/Animes' element={<ListaAnimes />} />
+            <Route path='/Series' element={<ListaSeries />} />
+            <Route path='/Hentai' element={<ListaHentai />} />
+            <Route path='/Peliculas' element={<ListaPeliculas />} />
             <Route path='*' element={<E404 />} />
           </Routes>
           <Copyright />

@@ -27,17 +27,15 @@ export default function NavbarT ({ ChangeTheme, Theme }) {
           <div className='flex justify-between px-1'>
 
             <div className='flex items-center py-3'>
-              <Link className='font-bold text-2xl text-neutral-800 hover:text-neutral-500 dark:text-[#00FFFF] dark:hover:text-[#FFC0CB] focus:hover:text-[#FFC0CB]' to='/Inicio'> ❤ IchiMonogatari ❤ </Link>
+              <Link className='font-bold text-lg text-neutral-800 hover:text-neutral-500 dark:text-[#00FFFF] dark:hover:text-[#FFC0CB] focus:hover:text-[#FFC0CB]' to='/Inicio'> ❤ IchiMonogatari ❤ </Link>
             </div>
 
             <div className='hidden lg:flex items-center space-x-1'>
-              <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Inicio'>Inicio</Link>
-              <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Anime'>Animes</Link>
-              <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Series'>Series</Link>
-              <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Pelicula'>Peliculas</Link>
-              <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Hentai'>Hentai</Link>
-              <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Mangas'>Mangas</Link>
-              <Link className='font-bold text-xl text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Doujinshi'>Doujinshi</Link>
+              <Link className='font-bold text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Inicio'>Inicio</Link>
+              <Link className='font-bold text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Animes'>Animes</Link>
+              <Link className='font-bold text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Series'>Series</Link>
+              <Link className='font-bold text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Peliculas'>Peliculas</Link>
+              <Link className='font-bold text-neutral-800 hover:text-neutral-500 dark:text-[#FFC0CB] dark:hover:text-[#00FFFF] DarkNavEnlaces px-3' to='/Hentai'>Hentai</Link>
               {
                 Theme === 'light'
                   // eslint-disable-next-line operator-linebreak
@@ -66,7 +64,7 @@ export default function NavbarT ({ ChangeTheme, Theme }) {
                 </div>
 
                 <input
-                  onChange={Busqueda} className='sm:text-sm pl-12 py-2 font-bold border-neutral-500 border-2 text-neutral-800 w-full
+                  onChange={Busqueda} className='text-xs pl-12 py-2 font-bold border-neutral-500 border-2 text-neutral-800 w-full
                   rounded-md shadow-sm focus:outline-none focus:border-neutral-600 focus:ring-neutral-600 dark:focus:border-[#FFC0CB] dark:focus:ring-[#FFC0CB] focus:ring-1' placeholder='BakeMonogatari ...' type='text' name='Busqueda' id='Busqueda'
                 />
               </label>
