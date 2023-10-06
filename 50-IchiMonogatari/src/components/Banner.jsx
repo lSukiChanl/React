@@ -1,13 +1,12 @@
-import DarkBanner from '../assets/BannerDark.png'
-import LightBanner from '../assets/BannerLight.png'
+import BannerChido from '../assets/ImagenChida.png'
 
 export default function Banner ({ Theme }) {
   return (
-    <div className=' bg-black'>
+    <div className=''>
       {
         Theme === 'dark'
-          ? <img className='w-full opacity-75 pointer-events-none' src={DarkBanner} alt='Imagen del Banner' />
-          : <img className='w-full opacity-75 pointer-events-none' src={LightBanner} alt='Imagen del Banner' />
+          ? <img className='w-full opacity-100 pointer-events-none' src={BannerChido} alt='Imagen del Banner' />
+          : <img className='w-full opacity-100 pointer-events-none' src={BannerChido} alt='Imagen del Banner' />
       }
     </div>
   )
