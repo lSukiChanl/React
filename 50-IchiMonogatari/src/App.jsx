@@ -8,6 +8,7 @@ import Copyright from './components/Copyright'
 
 import ListaTodos from './routes/ListaTodo'
 import ListaAnimes from './routes/ListaAnimes'
+import InfoAnime from './routes/InfoAnime'
 import ListaSeries from './routes/ListaSeries'
 import ListaHentai from './routes/ListaHentai'
 import ListaPeliculas from './routes/ListaPeliculas'
@@ -50,6 +51,7 @@ function App () {
             <Route path='/' element={<Banner Theme={Theme} />} />
             <Route path='/Inicio' element={<Banner Theme={Theme} />} />
             <Route path='/Animes' element={<Banner Theme={Theme} />} />
+            <Route path='/InfoAnime/:id' element={<Banner />} />
             <Route path='/Series' element={<Banner />} />
             <Route path='/Hentai' element={<Banner18 Theme={Theme} />} />
             <Route path='/Peliculas' element={<Banner />} />
@@ -60,6 +62,7 @@ function App () {
             <Route path='/' element={<ListaTodos />} />
             <Route path='/Inicio' element={<ListaTodos />} />
             <Route path='/Animes' element={<ListaAnimes />} />
+            <Route path='/InfoAnime/:id' element={<InfoAnime />} />
             <Route path='/Series' element={<ListaSeries />} />
             <Route path='/Hentai' element={<ListaHentai />} />
             <Route path='/Peliculas' element={<ListaPeliculas />} />
