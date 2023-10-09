@@ -2,11 +2,11 @@
     {
         "Url":"Bakemonogatari",
         "Nombre":"Bakemonogatari",
-        "Alias": ["化物語"],
+        "Alias":["Bakemonogatari"],
         "Descripcion":"",
         "Capitulos":"12",
         "Puntuacion":"8.7",
-        "Categorias": ["Anime"],
+        "Categoria": "Anime",
         "Generos": ["Misterio", "Paranormal", "Romance", "Ciencia", "Pokemon"],
         "FechaInicio":"03/07/2009",
         "FechaFin":"25/06/2010",

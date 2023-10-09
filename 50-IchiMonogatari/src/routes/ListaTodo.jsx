@@ -17,7 +17,7 @@ export default function ListaTodos ({ BotonLuces }) {
               ListaJson.map(Lista => (
                 <div key={Lista.Url}>
                   <div className='max-w-sm rounded bg-white overflow-hidden BrilloClaro dark:BrilloOscuro'>
-                    <Link to={'/Info' + Lista.Categorias + '/' + Lista.Url}>
+                    <Link to={'/Info' + Lista.Categoria + '/' + Lista.Url}>
                       <img className='w-full rounded aspect-video' src={Lista.ImgGif} alt='ImagenGif' />
                     </Link>
                     <div className='pt-1 pb-2'>

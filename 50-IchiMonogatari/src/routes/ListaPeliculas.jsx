@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import EjemploJson from '../examples/Peliculas'
+import EjemploJson from '../examples/Todo'
 
 export default function ListaPeliculas ({ BotonLuces }) {
   const ListaJson = EjemploJson.Search

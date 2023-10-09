@@ -1,13 +1,12 @@
-import Banner18Dark from '../assets/Banner18.png'
-import Banner18Light from '../assets/Banner18.png'
+import Banner18Hentai from '../assets/Definitivas/Banner18Pro.png'
 
-export default function Banner ({ Theme }) {
+export default function Banner18 ({ Theme }) {
   return (
-    <div className=' bg-black'>
+    <div className=''>
       {
         Theme === 'dark'
-          ? <img className='w-full opacity-75 pointer-events-none' src={Banner18Dark} alt='Imagen del Banner' />
-          : <img className='w-full opacity-75 pointer-events-none' src={Banner18Light} alt='Imagen del Banner' />
+          ? <img className='w-full pointer-events-none' src={Banner18Hentai} alt='Imagen del Banner' />
+          : <img className='w-full pointer-events-none' src={Banner18Hentai} alt='Imagen del Banner' />
       }
     </div>
   )

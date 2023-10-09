@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import EjemploJson from '../examples/Hentai'
+import EjemploJson from '../examples/Todo'
 
 export default function ListaHentai ({ BotonLuces }) {
   const ListaJson = EjemploJson.Search
