@@ -44,7 +44,7 @@ function App () {
         transform: `translate(${Position.x}px, ${Position.y}px)`
       }}
       />
-      <button onClick={() => { setEnabled(!Enabled) }}>  {Enabled ? 'Desactivar' : 'Activar'} </button>
+      <button onClick={() => { setEnabled(!Enabled) }}>  {Enabled ? 'Disable' : 'Enable'} </button>
     </main>
   )
 }
