@@ -25,15 +25,6 @@
       transform: rotate(360deg);
     }
   }
-
-  #ClaseNueeva{
-    background-color: #61dafbaa;
-  }
-  
-  #ClaseNueeva2{
-    background-color: #61dafbaa;
-  }
-  
   
   @media (prefers-reduced-motion: no-preference) {
     a:nth-of-type(2) .logo {
